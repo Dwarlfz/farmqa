@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "449079598197",
+    "project_id": "farm-qa-72b53",
+    "storage_bucket": "farm-qa-72b53.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449079598197:android:8272a0354fa57a43b4ec3c",
+        "android_client_info": {
+          "package_name": "com.example.farmqa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE7B86PU_j7ucmOoclOTUynMcuGVlewe8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
