@@ -12,7 +12,20 @@
           "package_name": "com.example.farmqa"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "449079598197-io8gv4d3nqr22urpge2muvodfi4ccael.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.farmqa",
+            "certificate_hash": "e5ba59e2bb224f0781530a5ba9da7819defdee0e"
+          }
+        },
+        {
+          "client_id": "449079598197-jj7k1d952u41hn28kd5rd9mf3qoupr05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDE7B86PU_j7ucmOoclOTUynMcuGVlewe8"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449079598197-jj7k1d952u41hn28kd5rd9mf3qoupr05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

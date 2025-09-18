@@ -1,12 +1,10 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/auth_provider.dart';
-import '../auth/login_page.dart';
-import '../home/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -15,15 +13,22 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // show splash for 2.2s and route based on auth state
-    Timer(const Duration(milliseconds: 2200), () {
-      final auth = Provider.of<AuthProvider>(context, listen: false);
-      if (auth.user != null) {
-        Navigator.pushReplacementNamed(context, '/home');
-      } else {
-        Navigator.pushReplacementNamed(context, '/login');
-      }
-    });
+    _redirect();
+  }
+
+  Future<void> _redirect() async {
+    final auth = Provider.of<AuthProvider>(context, listen: false);
+
+    // Wait until auth + profile is loaded
+    while (auth.isLoading) {
+      await Future.delayed(const Duration(milliseconds: 100));
+    }
+
+    if (auth.user != null && auth.profile != null) {
+      Navigator.pushReplacementNamed(context, '/preferences');
+    } else {
+      Navigator.pushReplacementNamed(context, '/login');
+    }
   }
 
   @override
@@ -54,7 +59,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 style: TextStyle(color: Colors.white70),
               ),
               const SizedBox(height: 24),
-              const SizedBox(width: 40, height: 40, child: CircularProgressIndicator(color: Colors.white)),
+              const SizedBox(
+                width: 40,
+                height: 40,
+                child: CircularProgressIndicator(color: Colors.white),
+              ),
             ],
           ),
         ),
